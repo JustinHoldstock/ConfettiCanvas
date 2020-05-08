@@ -10,6 +10,9 @@
 ## How to use
 
 ```js
+// Initialize the canvas
+ConfettiCannon.initializeCanvas();
+
 // Create instance
 const cannon = new ConfettiCannon(configuration);
 // Create a buncha sprites in the sprite pool.
@@ -71,7 +74,3 @@ Below are the defaults.
 };
 
 ```
-
-### Todo
-
-[] Init method that allows you to fetch canvas instead of just when the script runs

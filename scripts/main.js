@@ -1,11 +1,5 @@
-const canvas = document.body.querySelector('canvas.confetti');
-const dpr = window.devicePixelRatio || 1;
-const rect = canvas.getBoundingClientRect();
-canvas.width = rect.width * dpr;
-canvas.height = rect.height * dpr;
-const ctx = canvas.getContext('2d');
-ctx.width = canvas.clientWidth * devicePixelRatio;
-ctx.height = canvas.clientHeight * devicePixelRatio;
+let canvas;
+let ctx;
 
 const COLORS = ['orange', 'red', 'blue'];
 const DEFAULT_CONFIG = { maxScale: 3, width: 10, height: 10, spinFactor: 5, weight: 50, colors: COLORS };
@@ -64,6 +58,17 @@ class ConfettiCannon {
   y = 0;
   pool = [];
   config;
+
+  static initializeCanvas() {
+    canvas = document.body.querySelector('canvas.confetti');
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx = canvas.getContext('2d');
+    ctx.width = canvas.clientWidth * devicePixelRatio;
+    ctx.height = canvas.clientHeight * devicePixelRatio;
+  }
 
   constructor(config = {}) {
     this.config = Object.assign(DEFAULT_CONFIG, config);
