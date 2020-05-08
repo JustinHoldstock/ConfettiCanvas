@@ -8,6 +8,7 @@ ctx.width = canvas.clientWidth * devicePixelRatio;
 ctx.height = canvas.clientHeight * devicePixelRatio;
 
 const COLORS = ['orange', 'red', 'blue'];
+const DEFAULT_CONFIG = { maxScale: 3, width: 10, height: 10, spinFactor: 5, weight: 50, colors: COLORS };
 
 class Sprite {
   rotation = 0;
@@ -22,14 +23,14 @@ class Sprite {
   spinFactor = 1;
   weight = 1;
 
-  constructor({ maxScale = 3, width = 10, height = 10, spinFactor = 5, weight = 50 } = {}) {
+  constructor({ maxScale, width, height, spinFactor, weight, colors }) {
     // random size
     this.scale = Math.random() * maxScale;
     this.width = Math.random() * width;
     this.height = Math.random() * height;
 
     // random color
-    this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    this.color = colors[Math.floor(Math.random() * colors.length)];
 
     // random rotation
     this.rotation = (Math.random() * 360 * Math.PI) / 180;
@@ -62,10 +63,15 @@ class ConfettiCannon {
   x = 0;
   y = 0;
   pool = [];
+  config;
+
+  constructor(config = {}) {
+    this.config = Object.assign(DEFAULT_CONFIG, config);
+  }
 
   createSprites(numSprites = 100) {
     for (let i = 0; i < numSprites; i++) {
-      this.pool.push(new Sprite());
+      this.pool.push(new Sprite(this.config));
     }
   }
 
