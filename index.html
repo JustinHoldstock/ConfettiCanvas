@@ -13,7 +13,13 @@
     <script src="scripts/main.js"></script>
     <script>
       // Valentine's Day Cannon
-      const cannon = new ConfettiCannon({ maxScale: 2, width: 20, height: 20, weight: 75, colors: ['red', 'pink'] });
+      const cannon = new ConfettiCannon({
+        maxScale: 3.5,
+        width: 25,
+        height: 25,
+        weight: 100,
+        colors: ['powderblue', 'lightblue', 'navy', 'darkblue', 'stateblue'],
+      });
       cannon.createSprites(500);
       window.cannon = cannon;
 
