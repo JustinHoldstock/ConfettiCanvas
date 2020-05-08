@@ -15,7 +15,7 @@ const cannon = new ConfettiCannon(configuration);
 // Create a buncha sprites in the sprite pool.
 // I find 500 is enough
 cannon.createSprites(500);
-// You don't have to do this, but useful for debugging
+// You don't have to do this, but useful for testing
 window.cannon = cannon;
 
 // Invoke this is render all 500 at once!
@@ -37,6 +37,9 @@ function update() {
 
 // Kickstart the whole thing. Remember to clean up your RAF when done
 update();
+
+// Shot the cannon
+cannon.shoot();
 ```
 
 ![Blue Pizza!](./custom-pizza.gif)
