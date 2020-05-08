@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Yay!</title>
+
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <canvas class="confetti"></canvas>
+    <script src="scripts/main.js"></script>
+    <script>
+      const cannon = new ConfettiCannon();
+      cannon.createSprites(500);
+      window.cannon = cannon;
+
+      let lastFrame = Date.now();
+
+      function update() {
+        const dt = (Date.now() - lastFrame) * 0.001;
+        cannon.update(dt);
+        lastFrame = Date.now();
+        window.requestAnimationFrame(update);
+      }
+
+      update();
+    </script>
+  </body>
+</html>
