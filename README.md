@@ -40,7 +40,7 @@ cannon.shoot(); // or cannon.pizzaTime()
 You can provide the following to the ConfettiCannon constructor to make as many kinds of confetti as you want.
 Below are the defaults.
 
-```json
+```
 {
   maxScale: 3, // Randomization range of width and height
   width: 10, // Base width
@@ -49,6 +49,7 @@ Below are the defaults.
   weight: 50, // How fast confetti falls
   colors: ['orange', 'red', 'blue'] // Potential colors for the confetti pieces
 };
+
 ```
 
 ### Todo
