@@ -16,7 +16,7 @@ ConfettiCannon.initializeCanvas();
 // Create instance
 const cannon = new ConfettiCannon(configuration);
 // Create a buncha sprites in the sprite pool.
-// I find 500 is enough
+// I find 500 is enough. Optional as 100 are made by default
 cannon.createSprites(500);
 // You don't have to do this, but useful for testing
 window.cannon = cannon;
