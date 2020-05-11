@@ -47,7 +47,7 @@ cannon.shoot();
 
 ![Blue Pizza!](./custom-pizza.gif)
 
-### How to run as a static
+### How to run as static
 
 If you don't want to establish a render loop, you can also manually update time and have a single "image" of confetti
 
@@ -74,3 +74,7 @@ Below are the defaults.
 };
 
 ```
+
+TODO:
+- Targeted canvases
+- Multiple cannons per canvas
